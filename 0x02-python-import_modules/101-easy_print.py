@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-from sys import stdout ; stdout.write("#pythoniscool\n")
+from os import system ; system("echo \#pythoniscool\n")
