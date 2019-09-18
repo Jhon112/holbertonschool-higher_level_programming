@@ -31,8 +31,6 @@ int is_palindrome(listint_t **head)
 	length = get_length(*head);
 	if (length == 1)
 		return (1);
-	if (length % 2 != 0)
-		return (0);
 
 	i = 0;
 	while (i < length / 2)
@@ -40,7 +38,8 @@ int is_palindrome(listint_t **head)
 		half = half->next;
 		i++;
 	}
-	i--;
+	if (length % 2 == 0)
+		i--;
 	while (half != NULL)
 	{
 		current = *head;
