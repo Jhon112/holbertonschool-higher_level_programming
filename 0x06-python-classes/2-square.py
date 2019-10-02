@@ -5,7 +5,7 @@
 class Square():
     """ Defines a Square.
 
-    Attrinutes:
+    Attributes:
         __size (int): Size of square.
 
     """
@@ -17,7 +17,7 @@ class Square():
             size (int): size of square
 
         """
-        if not isinstance(size, int):
+        if not isinstance(size, (int, float)):
             raise TypeError("Size must be and integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
