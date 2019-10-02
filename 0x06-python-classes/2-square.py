@@ -2,7 +2,7 @@
 """ Write a class Square that defines a square """
 
 
-class Square():
+class Square:
     """ Defines a Square.
 
     Attributes:
