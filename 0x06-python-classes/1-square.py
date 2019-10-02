@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Declaration of Square class """
 
+
 class Square():
     """Declare protected attribue"""
 
