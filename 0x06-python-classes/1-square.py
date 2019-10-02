@@ -1,4 +1,4 @@
-#!/u2sr/bin/python3
+#!/usr/bin/python3
 """ Declaration of Square class """
 
 class Square():
