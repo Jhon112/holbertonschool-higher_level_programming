@@ -9,7 +9,6 @@ class Square():
         __size (int): Size of square.
 
     """
-
     def __init__(self, size=0):
         """ Assign attributes with the args passed
 
@@ -19,7 +18,6 @@ class Square():
         """
         if not isinstance(size, int):
             raise TypeError("size must be and integer")
-
         if size < 0:
             raise ValueError("size must be >= 0")
 
