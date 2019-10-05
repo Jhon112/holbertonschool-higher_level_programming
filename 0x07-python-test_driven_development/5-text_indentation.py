@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" prints a text with 2 new lines after each of these characters: ., ? and :"""
+"""prints a text with 2 new lines after each of these characters: ., ? and :"""
+
 
 def text_indentation(text):
     """replace the characters ., ? and : for a 2 blank_lines
@@ -14,11 +15,8 @@ def text_indentation(text):
         TypeError: if text is not a str
 
     """
-
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-
-
     replacers = ".?:"
     text = text.strip()
     for replacer in replacers:
