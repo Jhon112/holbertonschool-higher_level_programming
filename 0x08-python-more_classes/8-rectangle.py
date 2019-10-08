@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines an empty class Rectangle"""
 
+
 class Rectangle:
     """Class defininf a Rectangle obj
 
@@ -50,7 +51,6 @@ class Rectangle:
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
-
     @property
     def width(self):
         """getter method for width"""
@@ -78,7 +78,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-
     def area(self):
         """returns rectangle area"""
 
@@ -91,7 +90,6 @@ class Rectangle:
             return 0
         else:
             return (self.__width*2) + (self.__height*2)
-
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):

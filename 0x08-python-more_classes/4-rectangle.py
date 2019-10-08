@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines an empty class Rectangle"""
 
+
 class Rectangle:
     """Class defininf a Rectangle obj
 
@@ -41,7 +42,6 @@ class Rectangle:
 
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
-
     @property
     def width(self):
         """getter method for width"""
@@ -68,7 +68,6 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
 
     def area(self):
         """returns rectangle area"""
