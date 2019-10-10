@@ -26,15 +26,15 @@ Test numbers
 
     >>> add_integer(10, "Hi")
     Traceback (most recent call last):
-    TypeError: b must be an integers
+    TypeError: b must be an integer
 
     >>> add_integer(10, (2, 4))
     Traceback (most recent call last):
-    TypeError: b must be an integers
+    TypeError: b must be an integer
 
     >>> add_integer("hello", "world")
     Traceback (most recent call last):
-    TypeError: a must be an integers
+    TypeError: a must be an integer
 
 Test floats
 
