@@ -53,3 +53,7 @@ Missing two arguments
     >>> matrix_divided()
     Traceback (most recent call last):
     TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+divider is float
+    >>> matrix_divided([[10, 30], [20, 20]], 0.5)
+    [[20.0, 60.0], [40.0, 40.0]]
