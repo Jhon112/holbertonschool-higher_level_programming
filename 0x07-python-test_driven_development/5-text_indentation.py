@@ -18,8 +18,10 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     replacers = ".?:"
+
     text = text.strip()
+
     for replacer in replacers:
         text = text.replace(replacer, "{}\n\n".format(replacer))
 
-    print(text, end="")
+    print("\n".join([li.strip() for li in text.split("\n")]), end="")
