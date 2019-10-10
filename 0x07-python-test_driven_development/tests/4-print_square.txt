@@ -25,7 +25,7 @@ size is a float
     TypeError: size must be an integer
 
 size is a negative float
-    >>> print_square(-2.5)
+    >>> print_square(None)
     Traceback (most recent call last):
     TypeError: size must be an integer
 
@@ -35,3 +35,8 @@ correct output
     ####
     ####
     ####
+
+missing one argument
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
