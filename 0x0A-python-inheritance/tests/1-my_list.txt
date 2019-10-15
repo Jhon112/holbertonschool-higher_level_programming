@@ -19,5 +19,4 @@ MyList works as a list
 
 print_sorted method sorts the list
 	   >>> my_list.print_sorted()
-	   >>> print(my_list)
 	   [1, 2, 3]
