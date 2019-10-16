@@ -28,8 +28,7 @@ class Rectangle(BaseGeometry):
         """returns the string representation of the object. This method is
         called when print() or str() function is invoked on an object."""
 
-        return "[{}] {}/{}".format(self.__class__.__name__, self.__width,
-                                   self.__height)
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
     def area(self):
         """Calculates the area of a rectangle"""
