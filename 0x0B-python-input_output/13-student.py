@@ -71,4 +71,6 @@ class Student:
 
         """
 
-        self.__dict__ = {k: v for k, v in json.items() if k in self.__dict__}
+        for key, value in json.items():
+            if key in self.__dict__:
+                self.__dict__[key] = value
