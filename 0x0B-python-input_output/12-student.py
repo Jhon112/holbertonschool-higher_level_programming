@@ -43,19 +43,19 @@ class Student:
             if isinstance(attrs, list):
                 if all(isinstance(attr, str) for attr in attrs):
 
-                    #using filter function
+                    # using filter function
 
                     # new_dict = dict(filter(lambda ele: elem[0] in attrs,
                     # self.__dict__.items()))
 
-                    #using dict comprehension
+                    # using dict comprehension
 
                     new_dict = {k: v for k, v in self.__dict__.items()
                                 if k in attrs}
 
-                    #using for's
+                    # using for's
 
-                    #for attr in attrs:
+                    # for attr in attrs:
                     # if attr in self.__dict__.keys():
                     #  new_dict[attr] = self.__dict__[attr]
         else:
