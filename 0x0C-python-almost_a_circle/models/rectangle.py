@@ -25,10 +25,10 @@ class Rectangle(Base):
             id (int): id to be passed to super class
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     # Setters and getters for all attributes
     @property
@@ -41,8 +41,8 @@ class Rectangle(Base):
             Rectangle.raise_typeError('width')
         elif width <= 0:
             raise ValueError('width must be > 0')
-
-        self.__width = width
+        else:
+            self.__width = width
 
     @property
     def height(self):
@@ -54,8 +54,8 @@ class Rectangle(Base):
             Rectangle.raise_typeError('height')
         elif height <= 0:
             raise ValueError('height must be > 0')
-
-        self.__height = height
+        else:
+            self.__height = height
 
     @property
     def x(self):
@@ -67,8 +67,8 @@ class Rectangle(Base):
             Rectangle.raise_typeError('x')
         elif x < 0:
             raise ValueError('x must be >= 0')
-        
-        self.__x = x
+        else:
+            self.__x = x
 
     @property
     def y(self):
@@ -80,8 +80,8 @@ class Rectangle(Base):
             Rectangle.raise_typeError('y')
         elif y < 0:
             raise ValueError('y must be >= 0')
-            
-        self.__y = y
+        else:
+            self.__y = y
 
     # static methods
     @staticmethod
@@ -93,5 +93,5 @@ class Rectangle(Base):
         Args:
             attribute (str): attribute that couldn't be set
         """
-
-        raise TypeError('{attribute} must be an integer')
+        
+        raise TypeError('{} must be an integer'.format(attribute))
