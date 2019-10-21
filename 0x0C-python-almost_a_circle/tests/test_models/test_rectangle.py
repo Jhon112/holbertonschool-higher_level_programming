@@ -52,6 +52,14 @@ class testRectangleMethods(unittest.TestCase):
         with self.assertRaises(AttributeError):
             print(r3.__height)
 
+        # check an exception is raised when height not an int
+        with self.assertRaises(TypeError, msg="height must be an integer"):
+            r3.height = 'hi'
+
+        # check an exception is raised when height is less than 0 or 0
+        with self.assertRaises(ValueError, msg="height must be > 0"):
+            r3.height = 0
+
     def test_width(self):
         r2 = Rectangle(10, 2, id=12)
         self.assertEqual(r2.id, 12)
@@ -68,6 +76,14 @@ class testRectangleMethods(unittest.TestCase):
         with self.assertRaises(AttributeError):
             print(r2.__width)
 
+        # check an exception is raised when width not an int
+        with self.assertRaises(TypeError, msg="width must be an integer"):
+            r2.width = 'hi'
+
+        # check an exception is raised when width is less than 0 or 0
+        with self.assertRaises(ValueError, msg="width must be > 0"):
+            r2.width = 0
+
     def test_x(self):
         # Check getter works
         r4 = Rectangle(10, 2)
@@ -82,6 +98,14 @@ class testRectangleMethods(unittest.TestCase):
         # a private attribute
         with self.assertRaises(AttributeError):
             print(r4.__x)
+
+        # check an exception is raised when x not an int
+        with self.assertRaises(TypeError, msg="x must be an integer"):
+            r4.x = 'hi'
+
+        # check an exception is raised when x is less than 0
+        with self.assertRaises(ValueError, msg="x must be >= 0"):
+            r4.x = -1
 
     def test_y(self):
         r5 = Rectangle(10, 2)
@@ -98,3 +122,11 @@ class testRectangleMethods(unittest.TestCase):
         # a private attribute
         with self.assertRaises(AttributeError):
             print(r5.__y)
+
+        # check an exception is raised when y not an int
+        with self.assertRaises(TypeError, msg="y must be an integer"):
+            r5.y = 'hi'
+
+        # check an exception is raised when y is less than 0
+        with self.assertRaises(ValueError, msg="y must be >= 0"):
+            r5.y = -1
