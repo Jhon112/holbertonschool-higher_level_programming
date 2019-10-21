@@ -30,12 +30,18 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    # Setters and getters for all attributes
     @property
     def width(self):
         return self.__width
 
     @width.setter
     def width(self, width):
+        if not isinstance(width, int):
+            Rectangle.raise_typeError('width')
+        elif width <= 0:
+            raise ValueError('width must be > 0')
+
         self.__width = width
 
     @property
@@ -44,6 +50,11 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
+        if not isinstance(height, int):
+            Rectangle.raise_typeError('height')
+        elif height <= 0:
+            raise ValueError('height must be > 0')
+
         self.__height = height
 
     @property
@@ -52,6 +63,11 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
+        if not isinstance(x, int):
+            Rectangle.raise_typeError('x')
+        elif x < 0:
+            raise ValueError('x must be >= 0')
+        
         self.__x = x
 
     @property
@@ -60,4 +76,22 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
+        if not isinstance(y, int):
+            Rectangle.raise_typeError('y')
+        elif y < 0:
+            raise ValueError('y must be >= 0')
+            
         self.__y = y
+
+    # static methods
+    @staticmethod
+    def raise_typeError(attribute):
+        """
+        Method to raise TypeError when value is not
+        instance of int.
+
+        Args:
+            attribute (str): attribute that couldn't be set
+        """
+
+        raise TypeError('{attribute} must be an integer')
