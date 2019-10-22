@@ -1,4 +1,4 @@
-from .base import Base
+from models.base import Base
 """Defines class Rectangle who inherits from Base class"""
 
 
@@ -24,11 +24,21 @@ class Rectangle(Base):
             y (id): y value of attr
             id (int): id to be passed to super class
         """
+
         super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+
+    def __str__(self):
+        """
+        Printable form of class
+        """
+        return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id,
+                                                       self.__x, self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     # Setters and getters for all attributes
     @property
@@ -97,11 +107,42 @@ class Rectangle(Base):
     def display(self):
         """
         print to stdout the instance with the char #
+        based on the width (columns) and height (rows)
+
+        x and y can be also used to move the rectangle
+        in x (horizontal) and y (vertical) position
+
+        >>> r1 = Rectangle(5,5)
+        >>> r1.display()
+        #####
+        #####
+        #####
+        #####
+        #####
+
+        >>> r1 = Rectangle(5, 5, 2, 2)
+        >>> r1.display()
+        <BLANKLINE>
+        <BLANKLINE>
+          #####
+          #####
+          #####
+          #####
+          #####
         """
-        
+
+        # Moves the rectangle in y position
+        for y in range(self.__y):
+            print("")
+        # Lines to be printed
         for line in range(self.__height):
+            # moves the rectangle in x position
+            for x in range(self.__x):
+                print(" ", end="")
             for column in range(self.__width):
+                # prints the rectangle
                 print("#", end="")
+            # Jumps to the other line
             print("")
 
     # static methods
