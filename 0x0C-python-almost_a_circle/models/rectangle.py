@@ -83,6 +83,27 @@ class Rectangle(Base):
         else:
             self.__y = y
 
+    def area(self):
+        """
+        calculates the area of a rectangle
+
+        Return:
+            area (int): width * height
+
+        """
+
+        return self.__width * self.__height
+
+    def display(self):
+        """
+        print to stdout the instance with the char #
+        """
+        
+        for line in range(self.__height):
+            for column in range(self.__width):
+                print("#", end="")
+            print("")
+
     # static methods
     @staticmethod
     def raise_typeError(attribute):
@@ -93,5 +114,5 @@ class Rectangle(Base):
         Args:
             attribute (str): attribute that couldn't be set
         """
-        
+
         raise TypeError('{} must be an integer'.format(attribute))
