@@ -43,6 +43,12 @@ class Rectangle(Base):
     # Setters and getters for all attributes
     @property
     def width(self):
+        """
+        getter for width
+
+        Setter validates it's integer and not 0 or less
+        """
+
         return self.__width
 
     @width.setter
@@ -56,6 +62,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """
+        getter for height
+
+        Setter validates it's integer and not 0 or less
+        """
+
         return self.__height
 
     @height.setter
@@ -69,6 +81,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """
+        getter for x
+
+        Setter validates it's integer and not less than 0
+        """
+
         return self.__x
 
     @x.setter
@@ -86,6 +104,12 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
+        """
+        getter for x
+
+        Setter validates it's integer and not less than 0
+        """
+
         if not isinstance(y, int):
             Rectangle.raise_typeError('y')
         elif y < 0:
