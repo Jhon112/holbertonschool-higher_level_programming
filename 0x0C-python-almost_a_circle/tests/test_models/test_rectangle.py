@@ -6,7 +6,7 @@ class testRectangleMethods(unittest.TestCase):
 
     def test_all(self):
         r1 = Rectangle(10, 2, 20, 30)
-        #test id
+        # test id
         self.assertEqual(r1.id, 1)
 
         # Check getter for height works
@@ -105,3 +105,35 @@ class testRectangleMethods(unittest.TestCase):
         # check an exception is raised when y is less than 0
         with self.assertRaises(ValueError, msg="y must be >= 0"):
             r5.y = -1
+
+    def test_update(self):
+        # create instance
+        r1 = Rectangle(10, 10, 10, 10)
+
+        # test Id is updated
+        r1.update(89)
+        self.assertEqual(r1.id, 89)
+
+        # test width is updated
+        r1.update(89, 2)
+        self.assertEqual(r1.width, 2)
+
+        # test height is updated
+        r1.update(89, 2, 3)
+        self.assertEqual(r1.height, 3)
+
+        # test x is updated
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(r1.x, 4)
+
+        # test y is updated
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.y, 5)
+
+        # check ValueError is raised when update is sent with negative number
+        with self.assertRaises(ValueError, msg="y must be >= 0"):
+            r1.update(89, 2, 3, 4, -2)
+
+        # check TypeError is raised when update is sent with non integer value
+        with self.assertRaises(TypeError, msg="width must be an integer"):
+            r1.update(89, 'hi')
