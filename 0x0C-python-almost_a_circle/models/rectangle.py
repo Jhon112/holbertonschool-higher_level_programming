@@ -35,10 +35,9 @@ class Rectangle(Base):
         """
         Printable form of class
         """
-        return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id,
-                                                       self.__x, self.__y,
-                                                       self.__width,
-                                                       self.__height)
+
+        args = (self.id, self.__x, self.__y, self.__width, self.__height)
+        return '[Rectangle] ({}) {}/{} - {}/{}'.format(*args)
 
     # Setters and getters for all attributes
     @property
@@ -144,6 +143,24 @@ class Rectangle(Base):
                 print("#", end="")
             # Jumps to the other line
             print("")
+
+    def update(self, *args):
+        """
+        Assigns an argument to each attribute:
+            1st argument should be the id attribute
+            2nd argument should be the width attribute
+            3rd argument should be the height attribute
+            4th argument should be the x attribute
+            5th argument should be the y attribute
+
+        Args:
+            args (obj): list of arguments
+        """
+
+        attributes = ('id', 'width', 'height', 'x', 'y')
+        attributes = list(zip(attributes, args))
+        for attr, value in attributes:
+            setattr(self, attr, value)
 
     # static methods
     @staticmethod
