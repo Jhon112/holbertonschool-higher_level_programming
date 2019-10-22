@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 defines the class square, who inherits from Rectangle
 """
