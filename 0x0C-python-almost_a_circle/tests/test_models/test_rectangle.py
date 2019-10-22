@@ -7,7 +7,7 @@ class testRectangleMethods(unittest.TestCase):
     def test_all(self):
         r1 = Rectangle(10, 2, 20, 30)
         # test id
-        self.assertEqual(r1.id, 1)
+        self.assertEqual(r1.id, 4)
 
         # Check getter for height works
         self.assertEqual(r1.height, 2)
