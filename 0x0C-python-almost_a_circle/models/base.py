@@ -100,7 +100,10 @@ class Base:
         """
 
         # create dummy instance to call update
-        instance = cls(5, 5)
+        if cls.__name__ == 'Rectangle':
+            instance = cls(5, 5)
+        else:
+            instance = cls(5)
 
         # update instance attributes with update method
         instance.update(**dictionary)
