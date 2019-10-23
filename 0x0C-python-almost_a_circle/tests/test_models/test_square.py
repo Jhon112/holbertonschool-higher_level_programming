@@ -100,3 +100,17 @@ class TestSquareMethods(unittest.TestCase):
         # check TypeError is raised when update is sent with non integer value
         with self.assertRaises(TypeError, msg="width must be an integer"):
             s1.update(size='hi')
+
+    def test_to_dictionary(self):
+        s1 = Square(10, 2, 1, 1)
+
+        s1_dictionary = s1.to_dictionary()
+        self.assertEqual(
+            s1_dictionary, {'x': 2, 'y': 1, 'id': 1, 'size': 10})
+
+        s2 = Square(1, 1)
+        s2.update(**s1_dictionary)
+        s2_dictionary = s2.to_dictionary()
+        self.assertEqual(
+            s2_dictionary, {'x': 2, 'y': 1, 'id': 1, 'size': 10})
+        self.assertFalse(s1 == s2)
