@@ -109,5 +109,3 @@ class Base:
         instance.update(**dictionary)
 
         return instance
-
-
