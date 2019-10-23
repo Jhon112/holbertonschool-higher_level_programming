@@ -45,6 +45,24 @@ class Base:
         else:
             return json.dumps(list_dictionaries, skipkeys=True, indent=2)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        gets the python list of the JSON string representation json_string
+
+        Args:
+            json_string (json): JSON representation of a list with all
+                                the dictionaries
+
+        return:
+            (obj): python obj of JSON string
+        """
+
+        if json_string is None or json_string == "[]":
+            return []
+        else:
+            return json.loads(json_string, encoding="utf-8")
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
