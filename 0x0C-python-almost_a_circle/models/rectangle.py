@@ -190,6 +190,21 @@ class Rectangle(Base):
             for attr, value in kwargs.items():
                 setattr(self, attr, value)
 
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a rectangle
+        Contain:
+
+        id
+        width
+        height
+        x
+        y
+        """
+
+        return {'id': self.id, 'width': self.width,
+                'height': self.height, 'x': self.x, 'y': self.y}
+
     # static methods
     @staticmethod
     def raise_typeError(attribute):
