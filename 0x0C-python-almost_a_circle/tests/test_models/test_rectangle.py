@@ -167,3 +167,17 @@ class testRectangleMethods(unittest.TestCase):
         # check TypeError is raised when update is sent with non integer value
         with self.assertRaises(TypeError, msg="width must be an integer"):
             r1.update(width='hi')
+
+    def test_to_dictionary(self):
+        r1 = Rectangle(10, 2, 1, 9, 1)
+
+        r1_dictionary = r1.to_dictionary()
+        self.assertEqual(
+            r1_dictionary, {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+
+        r2 = Rectangle(1, 1)
+        r2.update(**r1_dictionary)
+        r2_dictionary = r2.to_dictionary()
+        self.assertEqual(
+            r2_dictionary, {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+        self.assertFalse(r1 == r2)
