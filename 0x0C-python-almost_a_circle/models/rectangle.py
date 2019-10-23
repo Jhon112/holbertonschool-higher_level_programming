@@ -169,7 +169,7 @@ class Rectangle(Base):
             # Jumps to the other line
             print("")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Assigns an argument to each attribute:
             1st argument should be the id attribute
@@ -181,11 +181,15 @@ class Rectangle(Base):
         Args:
             args (obj): list of arguments
         """
-
-        attributes = ('id', 'width', 'height', 'x', 'y')
-        attributes = list(zip(attributes, args))
-        for attr, value in attributes:
-            setattr(self, attr, value)
+        if args:
+            attributes = ('id', 'width', 'height', 'x', 'y')
+            attributes = list(zip(attributes, args))
+            for attr, value in attributes:
+                setattr(self, attr, value)
+        else:
+            for attr, value in kwargs.items():
+                setattr(self, attr, value)
+        
 
     # static methods
     @staticmethod
