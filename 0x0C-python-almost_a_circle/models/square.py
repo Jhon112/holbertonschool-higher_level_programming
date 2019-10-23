@@ -42,15 +42,16 @@ class Square(Rectangle):
         return '[Square] ({}) {}/{} - {}'.format(*args)
 
     @property
-    """
-    getter for size
-    Returns thee width of Rectangle
-
-    setter validates same as Rectangle's attributes
-    setter
-    sets width and height
-    """
     def size(self):
+        """
+        getter for size
+        Returns thee width of Rectangle
+
+        setter validates same as Rectangle's attributes
+        setter
+        sets width and height
+        """
+
         return self.width
 
     @size.setter
