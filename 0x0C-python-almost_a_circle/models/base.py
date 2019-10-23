@@ -79,7 +79,8 @@ class Base:
         overwrite the file if it already exists
         """
 
-        with open("{}.json".format(cls.__name__), mode="w") as file:
+        filename = "{}.json".format(cls.__name__)
+        with open(filename, mode="w", encoding="utf-8") as file:
             if list_objs is None:
                 file.write("[]")
             else:
@@ -114,15 +115,17 @@ class Base:
     def load_from_file(cls):
         """
         save_to_file writes a list of instance's attributes to a json file.
-        This method reads the file, get the python object and creates new instances
-        according to each dictionary on the python list gotten from the file
+        This method reads the file, get the python object and creates
+        new instances according to each dictionary on the python
+        list gotten from the file
 
         Return:
             (list): list with instances(dicts)
         """
 
         try:
-            with open('{}.json'.format(cls.__name__)) as file:
+            filename = '{}.json'.format(cls.__name__)
+            with open(filename, encoding="utf-8") as file:
                 json_list = file.read()
 
                 dictionaries_list = cls.from_json_string(json_list)
