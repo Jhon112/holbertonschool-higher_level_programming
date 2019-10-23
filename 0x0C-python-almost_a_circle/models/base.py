@@ -69,9 +69,13 @@ class Base:
         writes the JSON string representation of list_objs to a file:
 
         list_objs is a list of instances who inherits of Base
+
         If list_objs is None, save an empty list
+
         The filename must be: <Class name>.json
+
         use the static method to_json_string (created before)
+
         overwrite the file if it already exists
         """
 
@@ -82,3 +86,25 @@ class Base:
                 list_dicts = [obj.to_dictionary() for obj in list_objs]
                 json_list_dicts = Base.to_json_string(list_dicts)
                 file.write(json_list_dicts)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        returns an instance with all attributes on dictionary already set
+
+        Args:
+            dictionary(dict): dictionary with attributes to be set
+
+        Return:
+            (obj): instance with all attributes set
+        """
+
+        # create dummy instance to call update
+        instance = cls(5, 5)
+
+        # update instance attributes with update method
+        instance.update(**dictionary)
+
+        return instance
+
+
