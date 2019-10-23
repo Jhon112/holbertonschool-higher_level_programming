@@ -1,6 +1,7 @@
 import unittest
 from models.base import Base
 
+
 class testBaseMethods(unittest.TestCase):
     """Class to test different methods from base class"""
 

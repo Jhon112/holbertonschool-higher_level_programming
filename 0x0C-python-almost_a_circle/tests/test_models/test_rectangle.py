@@ -147,7 +147,7 @@ class testRectangleMethods(unittest.TestCase):
         # Test width is updated with kwargs
         r1.update(height=5)
         self.assertEqual(r1.height, 5)
-        
+
         # test width and x are updated
         r1.update(width=1, x=2)
         self.assertEqual(r1.width, 1)
