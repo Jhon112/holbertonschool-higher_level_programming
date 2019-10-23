@@ -2,6 +2,7 @@
 """Define class Base"""
 import json
 
+
 class Base:
     """
     This class is the “base” of all other
@@ -33,10 +34,7 @@ class Base:
         returns the JSON string representation of list_dictionaries:
         """
 
-        return_list = []
-        if  list_dictionaries is None:
-            return return_list
+        if list_dictionaries is None:
+            return []
         else:
-            return_list = list(list_dictionaries)
-            return json.dumps(return_list)
-
+            return json.dumps(list_dictionaries)
