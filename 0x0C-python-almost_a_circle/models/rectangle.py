@@ -189,7 +189,6 @@ class Rectangle(Base):
         else:
             for attr, value in kwargs.items():
                 setattr(self, attr, value)
-        
 
     # static methods
     @staticmethod
