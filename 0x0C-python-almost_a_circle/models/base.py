@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Define class Base"""
 import json
+from turtle import Screen, RawTurtle, done
+import random
 
 
 class Base:
@@ -62,6 +64,61 @@ class Base:
             return []
         else:
             return json.loads(json_string, encoding="utf-8")
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Opens a window and draws all the Rectangles and Squares using turtle module
+
+        Args:
+            list_rectangles (list): list of rectangles to draw
+            list_squares (list): list of squares to draw
+        """
+
+        screen = Screen()
+        screen.setup()
+        screen.bgcolor("black")
+        colors = ["cyan", "red", "blue", "white",
+                  "purple", "green", "brown", "#285078"]
+        square = RawTurtle(screen)
+        rectangle = RawTurtle(screen)
+        # square.speed(10)
+        # rectangle.speed(10)
+        for sq in list_squares:
+            square.penup()
+            square.home()
+            square.color(random.choice(colors))
+            square.goto(sq.x, sq.y)
+            square.pendown()
+            square.begin_fill()
+            i = 0
+            while i < 4:
+                square.forward(sq.size)
+                square.left(90)
+                i += 1
+            square.end_fill()
+        square.hideturtle()
+
+        for rect in list_rectangles:
+            rectangle.penup()
+            rectangle.home()
+            rectangle.color(random.choice(colors))
+            rectangle.goto(rect.x, rect.y)
+            rectangle.pendown()
+            i = 0
+            while i < 2:
+                rectangle.forward(rect.width)
+                rectangle.left(90)
+                rectangle.forward(rect.height)
+                rectangle.left(90)
+                i += 1
+        rectangle.hideturtle()
+        done()
+            
+
+
+
+        
 
     @classmethod
     def save_to_file(cls, list_objs):
