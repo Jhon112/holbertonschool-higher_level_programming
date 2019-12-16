@@ -15,7 +15,7 @@ if __name__ == "__main__":
     cursor.execute(
         """SELECT cities.id, cities.name, states.name
         FROM cities JOIN states ON states.id = cities.state_id
-        ORDER BY states.id""")
+        ORDER BY cities.id""")
 
     rows = cursor.fetchall()
     for row in rows:
