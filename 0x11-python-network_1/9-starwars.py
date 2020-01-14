@@ -11,6 +11,6 @@ if __name__ == "__main__":
     params = {'search': sys.argv[1]}
     r = requests.get(url, params=params)
     json = r.json()
-    print('Number of results: ', json.get('count'))
+    print('Number of results:', json.get('count'))
     for obj in json.get('results'):
         print(obj.get('name'))
