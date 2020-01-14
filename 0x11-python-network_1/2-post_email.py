@@ -8,10 +8,10 @@ import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    data = {'email': sys.argv[2]}
-    data = urllib.parse.urlencode(data)
+    payload = {'email': sys.argv[2]}
+    data = urllib.parse.urlencode(payload)
     data = data.encode('ascii')
     req = urllib.request.Request(url, data)
     with urllib.request.urlopen(url) as response:
-        r = response.read().decode("utf-8")
-        print(r)
+        r = response.read()
+        print(r.decode("utf-8"))
