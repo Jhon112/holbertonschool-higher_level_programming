@@ -5,7 +5,10 @@ fetches information from https://intranet.hbtn.io/status
 import urllib.request
 
 
-with urllib.request.urlopen("https://intranet.hbtn.io/status") as response:
-    r = response.read()
-    print("Body response:\n\t- type: {}\n\t- content: {}\n\t- utf8 content: {}".format(type(r), r, r.decode('utf-8'))
-    )
+if __name__ == "__main__":
+    with urllib.request.urlopen("https://intranet.hbtn.io/status") as response:
+        r = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(r)))
+        print("\t- content: {}".format(r))
+        print("\t- utf8 content: {}".format(r.decode("utf-8")))
