@@ -11,8 +11,11 @@ if __name__ == "__main__":
     letter = sys.argv[1] if len(sys.argv) > 1 else ""
     payload = {'q': letter}
     r = requests.post(url, data=payload)
-    if r.json():
-        msg = "[{}] {}".format(r.json()['id'], r.json()['name'])
-    else:
-        msg = 'No result'
-    print(msg)
+    try:
+        if r.json():
+            msg = "[{}] {}".format(r.json()['id'], r.json()['name'])
+        else:
+            msg = 'No result'
+        print(msg)
+    except ValueError as error:
+        print('Not a valid JSON')
