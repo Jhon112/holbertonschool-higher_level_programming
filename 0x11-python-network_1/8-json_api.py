@@ -12,10 +12,10 @@ if __name__ == "__main__":
     payload = {'q': letter}
     r = requests.post(url, data=payload)
     try:
-        if r.json():
-            msg = "[{}] {}".format(r.json()['id'], r.json()['name'])
+        json = r.json()
+        if json:
+            print("[{}] {}".format(json['id'], json['name']))
         else:
-            msg = 'No result'
-        print(msg)
-    except ValueError as error:
+            print("No result")
+    except ValueError as err:
         print('Not a valid JSON')
