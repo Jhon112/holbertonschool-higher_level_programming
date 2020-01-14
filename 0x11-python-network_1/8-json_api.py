@@ -7,7 +7,7 @@ import sys
 
 
 if __name__ == "__main__":
-    url = "http://eb941b7447d3.43.hbtn-cod.io:5000/search_user"
+    url = "http://0.0.0.0:5000/search_user"
     letter = sys.argv[1] if len(sys.argv) > 1 else ""
     payload = {'q': letter}
     r = requests.post(url, data=payload)
