@@ -1,5 +1,7 @@
 #!/usr/bin/node
 const array = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-array.forEach(element => {
-  console.log(element);
-});
+let i = 0;
+while (i < array.length) {
+  console.log(array[i]);
+  i++
+}
