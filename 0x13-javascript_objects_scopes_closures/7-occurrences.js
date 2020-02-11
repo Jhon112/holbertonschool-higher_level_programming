@@ -6,4 +6,4 @@ exports.nbOccurences = function (list, searchElement) {
   list.map(ele => ele === searchElement ? considences++ : ele);
 
   return considences;
-}
+};
