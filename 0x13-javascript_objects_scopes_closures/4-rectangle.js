@@ -1,32 +1,32 @@
 #!/usr/bin/node
 
 module.exports = class Rectangle {
-  constructor(w, h) {
+  constructor (w, h) {
     if (w > 0 && h > 0) {
       this.width = w;
       this.height = h;
     }
   }
 
-  print() {
+  print () {
     let index = 0;
     while (index < this.height) {
-      let str = "";
+      let str = '';
       for (let row = 0; row < this.width; row++) {
-        str += "X";
+        str += 'X';
       }
       console.log(str);
       index++;
     }
   }
 
-  rotate() {
+  rotate () {
     this.width = this.height + this.width;
     this.height = this.width - this.height;
     this.width = this.width - this.height;
   }
 
-  double() {
+  double () {
     this.width *= 2;
     this.height *= 2;
   }
