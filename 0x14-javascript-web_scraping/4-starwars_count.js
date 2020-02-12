@@ -4,16 +4,15 @@ const request = require('request');
 const url = process.argv[2];
 
 request(url, (error, response, body) => {
+  let counter = 0;
   if (!error && response.statusCode === 200) {
     const results = JSON.parse(body).results;
-    let counter = 0;
 
-    for (const fiml of results) {
-      if (isOnFilm(fiml)) counter++;
+    for (const film of results) {
+      if (isOnFilm(film)) counter++;
     }
-
-    console.log(counter);
   }
+  console.log(counter);
 });
 
 function isOnFilm (film) {
