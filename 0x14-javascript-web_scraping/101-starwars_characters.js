@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 const request = require('request');
-var rp = require('request-promise');
 const url = `http://swapi.co/api/films/${process.argv[2]}`;
 
 request(url, (error, response, body) => {
@@ -22,8 +21,9 @@ request(url, (error, response, body) => {
 
 function getName (characterUrl) {
   return new Promise((resolve, reject) => {
-    rp(characterUrl).then(response => {
-      resolve(JSON.parse(response).name);
+    request(characterUrl, (error, response, body) => {
+      if (error) throw error;
+      resolve(JSON.parse(body).name);
     });
   });
 }
