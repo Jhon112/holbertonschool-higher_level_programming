@@ -16,7 +16,7 @@ request(url, (error, response, body) => {
   }
 });
 
-function isOnFilm(film) {
-  let characters = film.characters;
+function isOnFilm (film) {
+  const characters = film.characters;
   return characters.includes('https://swapi.co/api/people/18/');
 }
